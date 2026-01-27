@@ -1,4 +1,7 @@
 <h2><a href="https://sites.google.com/saerom.hs.kr/main/홈">SAEROM-student.main</a></h2>
+<h2>Purpose</h2>
+<p></p>
+
 <h2>Element</h2>
 <p>배너</p>
 <p>크롬북 관리</p>
