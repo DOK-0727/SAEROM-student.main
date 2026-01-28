@@ -5,27 +5,27 @@
 <h2>Element</h2>
 <img src="explain_img/overview.png">
 
-<p>배너</p>
+<b>배너</b>
 <p>교내 행사, 공지 사항 등을 알릴 수 있는 배너 시스템입니다.</p>
 <img src="explain_img/banner.png">
 
-<p>크롬북 관리</p>
+<b>크롬북 관리</b>
 <p>학생들이 크롬북 반출시 반출 사유와 시각을 확인할 수 있도록 하는 크롬북 관리 시스템입니다.</p>
 <img src="explain_img/chromebook_management.png">
 <img src="explain_img/chromebook_management_click.png">
 
-<p>검색창</p>
+<b>검색창</b>
 <p>크롬북에서 사용할 수 있는 웹 사이트를 검색하여 접속할 수 있도록 하는 검색 시스템입니다.</p>
 <img src="explain_img/search_box.png">
 
-<p>부가 기능</p>
+<b>부가 기능</b>
 <img src="explain_img/additional_feature.png">
 
-<p>웹 런처</p>
+<b>웹 런처</b>
 <img src="explain_img/web_launcher.png">
 
-<p>gmail 알림</p>
+<b>gmail 알림</b>
 <img src="explain_img/gmail_alert.png">
 
-<p>수행평가 알림</p>
+<b>수행평가 알림</b>
 <img src="explain_img/test_alert.png">
