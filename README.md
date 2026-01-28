@@ -19,13 +19,17 @@
 <img src="explain_img/search_box.png">
 
 <b>부가 기능</b>
+<p></p>
 <img src="explain_img/additional_feature.png">
 
 <b>웹 런처</b>
+<p></p>
 <img src="explain_img/web_launcher.png">
 
 <b>gmail 알림</b>
+<p></p>
 <img src="explain_img/gmail_alert.png">
 
 <b>수행평가 알림</b>
+<p></p>
 <img src="explain_img/test_alert.png">
