@@ -8,7 +8,7 @@
 <p>배너</p>
 <img src="explain_img/banner.png">
 
-<p>반출/반납</p>
+<p>크롬북 관리</p>
 <img src="explain_img/chromebook_management.png">
 
 <p>검색창</p>
