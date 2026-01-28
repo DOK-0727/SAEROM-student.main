@@ -5,7 +5,7 @@
 <h2>Element</h2>
 <img src="https://lh3.googleusercontent.com/d/1qBGHG6UjdauNphdLzvaW38LEfWaOh1sB">
 <p>배너</p>
-<p>크롬북 반납/반출 버튼</p>
+<p>반출/반납</p>
 <p>검색창</p>
 <p>부가 기능</p>
 <p>웹 런처</p>
