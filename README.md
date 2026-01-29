@@ -5,7 +5,7 @@
 <h2>Element</h2>
 <img src="explain_img/Element/overview.png">
 
-<h3>배너</h3><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
+<h3>배너</h3><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"></p>
 <p>교내 행사, 공지 사항 등을 알릴 수 있는 배너 시스템입니다.</p>
 <img src="explain_img/Element/banner.png">
 
