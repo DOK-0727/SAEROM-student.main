@@ -1,78 +1,153 @@
-<h2><a href="https://sites.google.com/saerom.hs.kr/main/홈">SAEROM-student.main</a></h2>
-<h2>Purpose</h2>
-<p>학교에서 사용하는 크롬북을 더 편리하게 사용하기 위해 개발되었습니다.</p>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project README</title>
 
-<h2>Element</h2>
-<img src="explain_img/Element/overview.png">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, "Noto Sans KR", Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1f2937;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-<br>
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3em;
+    }
 
-<h3>배너</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Sites.jpeg" height="30px;"><img src="explain_img/My_Tool/Google_Sheets.jpeg" height="30px;">
-</P>
-<p>교내 행사, 공지 사항 등을 알릴 수 있는 배너 시스템입니다.</p>
-<img src="explain_img/Element/banner.png">
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 60px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
 
-<br>
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 40px;
+    }
 
-<h3>크롬북 관리</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Apps_Script.jpeg" height="30px;"><img src="explain_img/My_Tool/Google_Sheets.jpeg" height="30px;"></P>
-<p>학생들이 크롬북 반출시 반출 사유와 시각을 확인할 수 있도록 하는 크롬북 관리 시스템입니다.</p>
-<p><img src="explain_img/Element/chromebook_management.png">
-<img src="explain_img/Element/chromebook_management_click.png"></p>
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
 
-<br>
+    a:hover {
+      text-decoration: underline;
+    }
 
-<h3>검색창</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Sites.jpeg" height="30px;"></P>
-<p>크롬북에서 사용할 수 있는 웹 사이트를 검색하여 접속할 수 있도록 하는 검색 시스템입니다.</p>
-<img src="explain_img/Element/search_box.png">
+    .section {
+      margin-top: 40px;
+    }
 
-<br>
+    .element {
+      margin-top: 50px;
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background-color: #fafafa;
+    }
 
-<h3>부가 기능</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Sites.jpeg" height="30px;"></P>
-<p></p>
-<img src="explain_img/Element/additional_feature.png">
+    .badge-row img {
+      height: 28px;
+      margin-right: 8px;
+      margin-bottom: 6px;
+      vertical-align: middle;
+    }
 
-<br>
+    .element-image {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 1px solid #e5e7eb;
+    }
 
-<h3>웹 런처</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Sites.jpeg" height="30px;"></P>
-<p></p>
-<img src="explain_img/Element/web_launcher.png">
+    .label {
+      font-weight: 600;
+      margin-top: 18px;
+    }
 
-<br>
+    .reason {
+      background-color: #f3f4f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
 
-<h3>gmail 알림</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Apps_Script.jpeg" height="30px;"></P>
-<p></p>
-<img src="explain_img/Element/gmail_alert.png">
+<body>
 
-<br>
+  <!-- Project Title -->
+  <h1>
+    <a href="https://github.com/username/project-name">
+      Project Name
+    </a>
+  </h1>
 
-<h3>수행평가 알림</h3>
-<p>
-    <img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">
-    <br>
-    <img src="explain_img/My_Tool/Google_Apps_Script.jpeg" height="30px;"></P>
-<p></p>
-<img src="explain_img/Element/test_alert.png">
+  <!-- Purpose -->
+  <div class="section">
+    <h2>Purpose</h2>
+    <p>
+      이 프로젝트는 <strong>[해결하고자 한 문제]</strong>를 해결하기 위해  
+      <strong>[핵심 기능 또는 접근 방식]</strong>을 제공하는 것을 목적으로 개발되었습니다.
+    </p>
+  </div>
+
+  <!-- Elements -->
+  <div class="section">
+    <h2>Elements</h2>
+
+    <!-- Element 1 -->
+    <div class="element">
+      <h3>Element. 요소명</h3>
+
+      <!-- Tech / Tool -->
+      <div class="label">Tech</div>
+      <div class="badge-row">
+        <img src="https://img.shields.io/badge/JavaScript-000000?style=flat&logo=javascript" />
+        <img src="https://img.shields.io/badge/HTML5-000000?style=flat&logo=html5" />
+      </div>
+
+      <div class="label">Tool</div>
+      <div class="badge-row">
+        <img src="https://img.shields.io/badge/VS_Code-000000?style=flat&logo=visualstudiocode" />
+        <img src="https://img.shields.io/badge/GitHub-000000?style=flat&logo=github" />
+      </div>
+
+      <!-- Reason -->
+      <div class="label">Why Tech & Tool</div>
+      <div class="reason">
+        이 요소는 <strong>[기능 요구 조건]</strong>을 충족해야 했기 때문에  
+        <strong>[선택한 기술]</strong>을 사용했습니다.  
+        해당 기술은 <strong>[대안 대비 장점]</strong>이라는 장점이 있어 적합하다고 판단했습니다.
+      </div>
+
+      <!-- Element Image -->
+      <img
+        src="./assets/element-example.png"
+        alt="element preview"
+        class="element-image"
+      />
+
+      <!-- Description -->
+      <div class="label">Description</div>
+      <p>
+        이 요소는 <strong>[사용자 행동]</strong>을 통해  
+        <strong>[처리 대상]</strong>을 <strong>[결과]</strong>로 변환합니다.  
+        이를 통해 사용자는 <strong>[얻게 되는 핵심 가치]</strong>를 경험할 수 있습니다.
+      </p>
+    </div>
+
+    <!-- Element 추가 가능 -->
+  </div>
+
+</body>
+</html>
