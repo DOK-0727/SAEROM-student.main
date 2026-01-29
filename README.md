@@ -5,31 +5,31 @@
 <h2>Element</h2>
 <img src="explain_img/Element/overview.png">
 
-<h3>배너</h3><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;">/<img src="explain_img/My_Tools/Google_Sites.jpeg" height="30px;"><img src="explain_img/My_Tools/Google_Sheets.jpeg" height="30px;"></P>
+<h3>배너</h3><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Sites.jpeg" height="30px;"><img src="explain_img/My_Tools/Google_Sheets.jpeg" height="30px;"></P>
 <p>교내 행사, 공지 사항 등을 알릴 수 있는 배너 시스템입니다.</p>
 <img src="explain_img/Element/banner.png">
 
-<b>크롬북 관리</b>
+<b>크롬북 관리</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Apps_Script.jpeg" height="30px;"><img src="explain_img/My_Tools/Google_Sheets.jpeg" height="30px;"></P>
 <p>학생들이 크롬북 반출시 반출 사유와 시각을 확인할 수 있도록 하는 크롬북 관리 시스템입니다.</p>
 <p><img src="explain_img/Element/chromebook_management.png">
 <img src="explain_img/Element/chromebook_management_click.png"></p>
 
-<b>검색창</b>
+<b>검색창</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Sites.jpeg" height="30px;"></P>
 <p>크롬북에서 사용할 수 있는 웹 사이트를 검색하여 접속할 수 있도록 하는 검색 시스템입니다.</p>
 <img src="explain_img/Element/search_box.png">
 
-<b>부가 기능</b>
+<b>부가 기능</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Sites.jpeg" height="30px;"></P>
 <p></p>
 <img src="explain_img/Element/additional_feature.png">
 
-<b>웹 런처</b>
+<b>웹 런처</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Sites.jpeg" height="30px;"></P>
 <p></p>
 <img src="explain_img/Element/web_launcher.png">
 
-<b>gmail 알림</b>
+<b>gmail 알림</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Apps_Script.jpeg" height="30px;"></P>
 <p></p>
 <img src="explain_img/Element/gmail_alert.png">
 
-<b>수행평가 알림</b>
+<b>수행평가 알림</b><p><img src="explain_img/My_Tech/HTML.jpeg" height="30px;"><img src="explain_img/My_Tech/CSS.jpeg" height="30px;"><img src="explain_img/My_Tech/JavaScript.jpeg" height="30px;"><br><img src="explain_img/My_Tools/Google_Apps_Script.jpeg" height="30px;"></P>
 <p></p>
 <img src="explain_img/Element/test_alert.png">
