@@ -13,7 +13,7 @@
     <br>
     <img src="explain_img/My_Tool/Google_Sites.jpeg" height="30px;"><img src="explain_img/My_Tool/Google_Sheets.jpeg" height="30px;">
 </P>
-<hr>
+
 <h3>크롬북 관리</h3>
 <p><img src="explain_img/Element/chromebook_management.png">
 <img src="explain_img/Element/chromebook_management_click.png"></p>
