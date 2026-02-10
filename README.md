@@ -43,6 +43,13 @@
 
 <h3>부가 기능</h3>
 <img src="explain_img/Element/additional_feature.png">
+<p>
+    <img src="explain_img/Element/additional_feature/timetable.png">
+    <img src="explain_img/Element/additional_feature/lunch.png">
+    <img src="explain_img/Element/additional_feature/suggestion.png">
+    <img src="explain_img/Element/additional_feature/wifi.png">
+    <img src="explain_img/Element/additional_feature/diagnosis.png">
+</p>
 <p>이 요소는 학생들의 크롬북 사용 편의성을 높일 수 있도록 자주 활용되는 보조 기능들을 하나의 환경에서 제공합니다.</p>
 <p>
     <img src="explain_img/My_Tech/HTML.jpeg" height="12px;">HTML
