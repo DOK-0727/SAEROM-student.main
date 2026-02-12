@@ -59,7 +59,7 @@
             font-size: 17px;
         }
 
-        a .detail {
+        a .card-detail {
             display: none;
             position: absolute;
             top: 100px;
@@ -75,7 +75,7 @@
             word-break: break-word;
         }
 
-        a:hover .detail {
+        a:hover .card-detail {
             display: block;
         }
 
@@ -461,48 +461,85 @@
         }
 
         #suggestionContainer {
-            display: inline-block;
             position: relative;
-            width: 350px;
+            width: 400px;
         }
 
         #suggestionList {
             position: absolute;
-            z-index: 1;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-height: 150px;
+            top: 55px;
+
+            left: 0;
+            width: 100%;
+            max-height: 350px;
             overflow-y: auto;
-            margin-top: 5px;
-            width: 350px;
+
+            background: #fff;
+
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+            padding: 8px 0;
+            margin: 0;
+
             display: none;
+            z-index: 9999;
         }
 
         #suggestionList li {
-            padding: 10px;
+            list-style: none;
+            padding: 10px 20px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background 0.15s ease;
         }
 
+        #suggestionList li:hover,
         #suggestionList li.active {
-            background: #cceaff;
+            background: #f5f7fa;
         }
 
-        #suggestionList p {
-            padding: 10px;
-            font-size: 13px;
-            color: #666;
+        #suggestionList a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #333;
+            width: 100%;
+        }
+
+        #suggestionList .card-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        #suggestionList .card-title {
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        #suggestionList .card-detail {
+            display: none;
         }
 
         #container input[type="text"] {
-            width: 400px;
+            width: 100%;
             height: 50px;
-            padding: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.24);
+            padding: 0 20px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
             border-radius: 25px;
             font-size: 14px;
             box-sizing: border-box;
             background-color: #fff;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        #container input[type="text"]:focus {
+            border-color: #4c8bf5;
+            box-shadow: 0 4px 12px rgba(76, 139, 245, 0.2);
         }
 
         .banner-wrapper {
@@ -686,7 +723,7 @@
 
             <div id="calendar">
                 <iframe
-                    src="https://calendar.google.com/calendar/u/0/embed?color=%234986e7&src=c_75e632ca831edd3bc3f5ca852150b09b45e4998707845df6c51e60b56c3d179a@group.calendar.google.com"></iframe>
+                    src="https://calendar.google.com/calendar/u/0/embed?color=%234986e7&amp;src=c_75e632ca831edd3bc3f5ca852150b09b45e4998707845df6c51e60b56c3d179a@group.calendar.google.com"></iframe>
             </div>
 
             <div id="more_button">⋮</div>
@@ -735,247 +772,514 @@
 
         <br>
         <br>
-
         <div id="google_tools">
-            <a href="https://www.google.com/?hl=ko&safe=active&ssui=on"><img
-                    src="https://lh3.googleusercontent.com/d/190psV0M_A8QpY9a0naAFC91DYJrkDM7h"><label>Google</label>
-                <label class="detail">다양한 정보를 빠르게 찾을 수 있는 종합 검색 엔진</label></img>
+
+            <a href="https://www.google.com/?hl=ko&safe=active&ssui=on">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/190psV0M_A8QpY9a0naAFC91DYJrkDM7h"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Google</label>
+                <label class="card-detail">다양한 정보를 빠르게 찾을 수 있는 종합 검색 엔진</label>
+                </img>
             </a>
-            <a href="https://classroom.google.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1PC8B6xqUNgaON9vN-VR6FARfL_OzHLf-"><label>Classroom</label>
-                <label class="detail">온라인 수업 자료 배포와 과제 관리를 위한 플랫폼</label></img>
+
+            <a href="https://classroom.google.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1PC8B6xqUNgaON9vN-VR6FARfL_OzHLf-"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Classroom</label>
+                <label class="card-detail">온라인 수업 자료 배포와 과제 관리를 위한 플랫폼</label>
+                </img>
             </a>
-            <a href="https://drive.google.com/drive/home"><img
-                    src="https://lh3.googleusercontent.com/d/12UwKAuuuHFXrab7Z2YijggsFJh07B0oY"><label>Drive</label>
-                <label class="detail">문서, 파일 등을 저장하고 공유하는 클라우드 저장소</label></img>
+
+            <a href="https://drive.google.com/drive/home">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/12UwKAuuuHFXrab7Z2YijggsFJh07B0oY"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Drive</label>
+                <label class="card-detail">문서, 파일 등을 저장하고 공유하는 클라우드 저장소</label>
+                </img>
             </a>
-            <a href="https://mail.google.com/mail/u/0/#inbox"><img
-                    src="https://lh3.googleusercontent.com/d/10vbQhEw4hVE4m6VtKQJv-uFEUbKEd14Y"><label>Gmail</label>
-                <label class="detail">구글 계정을 기반으로 하는 이메일 서비스</label></img>
+
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/10vbQhEw4hVE4m6VtKQJv-uFEUbKEd14Y"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Gmail</label>
+                <label class="card-detail">구글 계정을 기반으로 하는 이메일 서비스</label>
+                </img>
             </a>
-            <a href="https://mail.google.com/chat/"><img
-                    src="https://lh3.googleusercontent.com/d/13b8NWJsymDTY9m_IK75f-Qq-Bi1Efekq"><label>Chat</label>
-                <label class="detail">실시간 협업 및 커뮤니케이션을 위한 채팅</label></img>
+
+            <a href="https://mail.google.com/chat/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/13b8NWJsymDTY9m_IK75f-Qq-Bi1Efekq"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Chat</label>
+                <label class="card-detail">실시간 협업 및 커뮤니케이션을 위한 채팅</label>
+                </img>
             </a>
-            <a href="https://www.google.com/maps?authuser=0"><img
-                    src="https://lh3.googleusercontent.com/d/1JLJH9DU1PKPy5yuWrRcjN4WTSLCqZJac"><label>Maps</label>
-                <label class="detail">위치 확인, 거리 탐색 등을 위한 지리 지도</label></img>
+
+            <a href="https://www.google.com/maps?authuser=0">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1JLJH9DU1PKPy5yuWrRcjN4WTSLCqZJac"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Maps</label>
+                <label class="card-detail">위치 확인, 거리 탐색 등을 위한 지리 지도</label>
+                </img>
             </a>
-            <a href="https://calendar.google.com/calendar/u/0/r"><img
-                    src="https://lh3.googleusercontent.com/d/1a0ZQWmxWksoYNwjd9U3QpNQ9bBYwCGxF"><label>Calendar</label>
-                <label class="detail">일정 등록, 알림 설정, 공유 기능 제공 도구</label></img>
+
+            <a href="https://calendar.google.com/calendar/u/0/r">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1a0ZQWmxWksoYNwjd9U3QpNQ9bBYwCGxF"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Calendar</label>
+                <label class="card-detail">일정 등록, 알림 설정, 공유 기능 제공 도구</label>
+                </img>
             </a>
-            <a href="https://colab.research.google.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1bE98IDUKAUAU8vLPdh9UrSEXVUAoK1tK"
-                    style="width:80px; height:50px;"><label>Colab</label>
-                <label class="detail">파이썬 코드 실습 및 프로젝트 공동 수행</label></img>
+
+            <a href="https://colab.research.google.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1bE98IDUKAUAU8vLPdh9UrSEXVUAoK1tK"
+                    style="width:80px; height:50px;">
+                <label class="card-title">Colab</label>
+                <label class="card-detail">파이썬 코드 실습 및 프로젝트 공동 수행</label>
+                </img>
             </a>
-            <a href="https://docs.google.com/presentation/"><img
-                    src="https://lh3.googleusercontent.com/d/1NqZRbZQjb9wik64j73Yb8nM2oMxln3Qc"><label>Slides</label>
-                <label class="detail">프레젠테이션 제작 및 공유</label></img>
+
+            <a href="https://docs.google.com/presentation/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1NqZRbZQjb9wik64j73Yb8nM2oMxln3Qc"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Slides</label>
+                <label class="card-detail">프레젠테이션 제작 및 공유</label>
+                </img>
             </a>
-            <a href="https://keep.google.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1ph-ekpO4yPr2P5stdfgmWkAc78O_JlVv"><label>Keep</label>
-                <label class="detail">메모를 기록할 수 있는 메모장</label></img>
+
+            <a href="https://keep.google.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1ph-ekpO4yPr2P5stdfgmWkAc78O_JlVv"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Keep</label>
+                <label class="card-detail">메모를 기록할 수 있는 메모장</label>
+                </img>
             </a>
-            <a href="https://docs.google.com/spreadsheets/"><img
-                    src="https://lh3.googleusercontent.com/d/1WKgUC17IHqgQSURQhUmwMW9exKuVGteZ"><label>Sheets</label>
-                <label class="detail">데이터를 정리하고 분석할 수 있는 스프레드시트</label></img>
+
+            <a href="https://docs.google.com/spreadsheets/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1WKgUC17IHqgQSURQhUmwMW9exKuVGteZ"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Sheets</label>
+                <label class="card-detail">데이터를 정리하고 분석할 수 있는 스프레드시트</label>
+                </img>
             </a>
-            <a href="https://docs.google.com/document/"><img
-                    src="https://lh3.googleusercontent.com/d/1FSLqcPYb5B7_NorkybhgXqySxC7BTLYk"><label>Docs</label>
-                <label class="detail">글 작성과 공동 편집이 가능한 워드 프로세서</label></img>
+
+            <a href="https://docs.google.com/document/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1FSLqcPYb5B7_NorkybhgXqySxC7BTLYk"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Docs</label>
+                <label class="card-detail">글 작성과 공동 편집이 가능한 워드 프로세서</label>
+                </img>
             </a>
-            <a href="https://sites.google.com/?hl=ko&tgif=d"><img
-                    src="https://lh3.googleusercontent.com/d/1zQD1nOwHNWkBhvpqrSylIb4ibPDhg_Wv"><label>Sites</label>
-                <label class="detail">학급 또는 프로젝트용 웹사이트 제작 도구</label></img>
+
+            <a href="https://sites.google.com/?hl=ko&tgif=d">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1zQD1nOwHNWkBhvpqrSylIb4ibPDhg_Wv"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Sites</label>
+                <label class="card-detail">학급 또는 프로젝트용 웹사이트 제작 도구</label>
+                </img>
             </a>
-            <a href="https://docs.google.com/forms/"><img
-                    src="https://lh3.googleusercontent.com/d/1d9vlFjFL6ug8PzASHwD5GuZKtzdhoule"><label>Forms</label>
-                <lab class="detail">설문조사, 퀴즈 등 피드백 수집 가능 사이트</label></img>
+
+            <a href="https://docs.google.com/forms/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1d9vlFjFL6ug8PzASHwD5GuZKtzdhoule"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Forms</label>
+                <label class="card-detail">설문조사, 퀴즈 등 피드백 수집 가능 사이트</label>
+                </img>
             </a>
-            <a href="https://scholar.google.co.kr/schhp?hl=ko"><img
-                    src="https://lh3.googleusercontent.com/d/1qxk1eSVipbnJrLOk3_3YJwxSZ3xGMavF"><label>Scholar</label>
-                <label class="detail">학술 논문, 연구자료를 찾을 수 있는 전문 검색 엔진</label></img>
+
+            <a href="https://scholar.google.co.kr/schhp?hl=ko">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1qxk1eSVipbnJrLOk3_3YJwxSZ3xGMavF"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Scholar</label>
+                <label class="card-detail">학술 논문, 연구자료를 찾을 수 있는 전문 검색 엔진</label>
+                </img>
             </a>
-            <a href="https://translate.google.com/?sl=ko&tl=en&op=translate"><img
-                    src="https://lh3.googleusercontent.com/d/10zZT7X5qXuUt5eujsXFXVTqgsp_iDoXi"><label>Translate</label>
-                <label class="detail">다국어 텍스트를 자동으로 다른 언어로 바꿔주는 언어 변환 도구</label></img>
+
+            <a href="https://translate.google.com/?sl=ko&tl=en&op=translate">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/10zZT7X5qXuUt5eujsXFXVTqgsp_iDoXi"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Translate</label>
+                <label class="card-detail">다국어 텍스트를 자동으로 다른 언어로 바꿔주는 언어 변환 도구</label>
+                </img>
             </a>
         </div>
 
         <div id="create_tools">
-            <a href="https://www.canva.com/ko_kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1pi_xgsTzpAz0v8iUp2HZ_YOHE8zLUUsR"><label>Canva</label><label
-                    class="detail">포스터, 카드, 발표 자료 등 다양한 디자인 제작 도구</label></img></a>
-            <a href="https://www.miricanvas.com/"><img
-                    src="https://lh3.googleusercontent.com/d/18n_ix3BQMO6seBzlRchiMelUxO3dQdzs"><label>MiriCanvas</label><label
-                    class="detail">템플릿을 활용해 다양한 디자인을 쉽게 만들 수 있는 플랫폼</label></img></a>
-            <a
-                href="https://www.google.com/url?q=https%3A%2F%2Fwww.hancomdocs.com%2Fko%2Fhome&sa=D&sntz=1&usg=AOvVaw1_Mfkgc5hMZSy_2xDEPJlY"><img
-                    src="https://lh3.googleusercontent.com/d/17mluXURcDlF-rLvC_VKcebtVNPxHYCbS"><label>Hancom
-                    Docs</label><label class="detail">한글 문서를 웹에서 작성 및 공동 작업 도구</label></img></a>
-            <a href="https://app.clipchamp.com/login"><img
-                    src="https://lh3.googleusercontent.com/d/1SVgXAkFoy3EMLe2lbP3Jl4ZwWq44sb1v"><label>Clipchamp</label><label
-                    class="detail">웹 기반의 간단한 영상 편집 도구</label></img></a>
-            <a href="https://www.programiz.com/python-programming/online-compiler/"><img
-                    src="https://lh3.googleusercontent.com/d/1c1kjAJMwVTQ_rPaTIqDg_WuFJ-JMb_QD"><label>Programiz</label><label
-                    class="detail">프로그래밍 언어 실습 플랫폼</label></img></a>
-            <a href="https://www.polarisoffice.com/ko/personal/officeweb"><img
-                    src="https://lh3.googleusercontent.com/d/1e9Wwvrd1Xh5V199baqZ0w_MFOFbZ4itV"><label>Polaris
-                    Office</label><label class="detail">문서, 엑셀, 프레젠테이션 작성과 편집이 가능한 오피스</label></img></a>
-            <a href="https://bookcreator.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1GAib2KLoP6H0HoL13y6oDiNqPmMARO8_"><label>Book
-                    Creator</label><label class="detail">나만의 전자책을 만들 수 있는 책 제작 도구</label></img></a>
-            <a href="https://www.tinkercad.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1pfwpOtMqHdSfTHI7JUUlp9Xqm5_naO9N"
-                    style="width:80px; height:80px;"><label>Tinkercad</label><label class="detail">3D 모델링과 전자회로 설계
-                    도구</label></img></a>
-            <a href="https://www.figma.com/ko-kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1UcuQavCdAJUQF2X0fIUdtNvxtI2mTLBm"
-                    style="width:80px; height:80px;"><label>Figma</label><label class="detail">웹 기반 UI/UX 디자인 및 공동 작업
-                    도구</label></img></a>
+
+            <a href="https://www.canva.com/ko_kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1pi_xgsTzpAz0v8iUp2HZ_YOHE8zLUUsR"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Canva</label>
+                <label class="card-detail">포스터, 카드, 발표 자료 등 다양한 디자인 제작 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.miricanvas.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/18n_ix3BQMO6seBzlRchiMelUxO3dQdzs"
+                    style="width:55px; height:55px;">
+                <label class="card-title">MiriCanvas</label>
+                <label class="card-detail">템플릿을 활용해 다양한 디자인을 쉽게 만들 수 있는 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.hancomdocs.com/ko/home">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/17mluXURcDlF-rLvC_VKcebtVNPxHYCbS"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Hancom Docs</label>
+                <label class="card-detail">한글 문서를 웹에서 작성 및 공동 작업 도구</label>
+                </img>
+            </a>
+
+            <a href="https://app.clipchamp.com/login">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1SVgXAkFoy3EMLe2lbP3Jl4ZwWq44sb1v"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Clipchamp</label>
+                <label class="card-detail">웹 기반의 간단한 영상 편집 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.programiz.com/python-programming/online-compiler/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1c1kjAJMwVTQ_rPaTIqDg_WuFJ-JMb_QD"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Programiz</label>
+                <label class="card-detail">프로그래밍 언어 실습 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.polarisoffice.com/ko/personal/officeweb">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1e9Wwvrd1Xh5V199baqZ0w_MFOFbZ4itV"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Polaris Office</label>
+                <label class="card-detail">문서, 엑셀, 프레젠테이션 작성과 편집이 가능한 오피스</label>
+                </img>
+            </a>
+
+            <a href="https://bookcreator.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1GAib2KLoP6H0HoL13y6oDiNqPmMARO8_"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Book Creator</label>
+                <label class="card-detail">나만의 전자책을 만들 수 있는 책 제작 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.tinkercad.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1pfwpOtMqHdSfTHI7JUUlp9Xqm5_naO9N"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Tinkercad</label>
+                <label class="card-detail">3D 모델링과 전자회로 설계 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.figma.com/ko-kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1UcuQavCdAJUQF2X0fIUdtNvxtI2mTLBm"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Figma</label>
+                <label class="card-detail">웹 기반 UI/UX 디자인 및 공동 작업 도구</label>
+                </img>
+            </a>
         </div>
 
         <div id="search_tools">
-            <a href="https://www.naver.com/"><img
-                    src="https://lh3.googleusercontent.com/d/14QSMWmkquRI0vEbsnwMiy063_kOfhm_W"><label>네이버</label><label
-                    class="detail">포털 기반으로 다양한 콘텐츠와 정보를 통합 제공하는 웹</label></img></a>
-            <a href="https://dict.naver.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1r5WZpnw4p4tTUQrDgh029-jr4-8365Mp"><label>네이버
-                    어학사전</label><label class="detail">다양한 분야의 지식을 모아놓은 백과사전 서비스</label></img></a>
-            <a href="https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8"><img
-                    src="https://lh3.googleusercontent.com/d/1f8HEDiVMkMUG5XgAJQVvp5oTfNLQH3Yz"><label>나무위키</label><label
-                    class="detail">한국인 사용자 참여로 구성된 온라인 백과사전</label></img></a>
-            <a href="https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8"><img
-                    src="https://lh3.googleusercontent.com/d/1loTaZVYmNIrhJcuqR3LvpW2IS2RLU41F"><label>위키백과</label><label
-                    class="detail">전세계 사용자 참여로 구성된 온라인 백과사전</label></img></a>
-            <a href="https://www.dbpia.co.kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1U-Jjbce0qzD63HDO0xPfN1mLmskhHx7z"
-                    style="height:90px; width:70px;"><label>DBpia</label><label class="detail">국내 학술지 논문 검색 및 열람이 가능한 학술
-                    데이터베이스</label></img></a>
-            <a href="https://www.bigkinds.or.kr/"><img
-                    src="https://lh3.googleusercontent.com/d/12-mq3GlouRJxrmu4QR9Yojb43b3b5saV"><label>빅카인즈</label><label
-                    class="detail">뉴스 데이터를 기반으로 정보 분석과 수집이 가능한 플랫폼</label></img></a>
-            <a href="https://kostat.go.kr/ansk/"><img
-                    src="https://lh3.googleusercontent.com/d/1qKK_4ZnnjFzPGQofEyFrzdnIIOohrLWL"
-                    style="height:40px; width:70px;"><label>통계청</label><label class="detail">국가 통계자료를 제공하는
-                    포털</label></img></a>
-            <a href="https://lib.sejong.go.kr/portal/"><img
-                    src="https://lh3.googleusercontent.com/d/1JxyekpJcd-CY6GWACnmhlRVN70PZ_X4l"
-                    style="height:40px;"><label>세종도서관</label><label class="detail">전자책과 학습자료를 제공하는 디지털
-                    도서관</label></img></a>
-            <a
-                href="https://read365.edunet.net/PureScreen/SchoolSearch?schoolName=%EC%83%88%EB%A1%AC%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90&provCode=I10&neisCode=I100000162"><img
-                    src="https://lh3.googleusercontent.com/d/1kW4Cz-zf6XPTwR281rluDGou6ik9apv_"
-                    style="height:40px;"><label>독서로</label><label class="detail">학교 도서관의 책을 검색할 수 있는
-                    시스템</label></img></a>
 
-            <a href="https://www.moleg.go.kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1bGEO39Q9ZKsGlbP5-IHkRMg1iYs1F_Gr"
-                    style="width:70px; height:40px;"><label>법제처</label><label class="detail">법령·행정규칙·자치법규를 검색하고 해석 정보를
-                    제공하는 사이트</label></img></a>
+            <a href="https://www.naver.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/14QSMWmkquRI0vEbsnwMiy063_kOfhm_W"
+                    style="width:55px; height:55px;">
+                <label class="card-title">네이버</label>
+                <label class="card-detail">포털 기반으로 다양한 콘텐츠와 정보를 통합 제공하는 웹</label>
+                </img>
+            </a>
+
+            <a href="https://dict.naver.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1r5WZpnw4p4tTUQrDgh029-jr4-8365Mp"
+                    style="width:55px; height:55px;">
+                <label class="card-title">네이버 어학사전</label>
+                <label class="card-detail">다양한 분야의 지식을 모아놓은 백과사전 서비스</label>
+                </img>
+            </a>
+
+            <a href="https://namu.wiki/w/나무위키:대문">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1f8HEDiVMkMUG5XgAJQVvp5oTfNLQH3Yz"
+                    style="width:55px; height:55px;">
+                <label class="card-title">나무위키</label>
+                <label class="card-detail">한국인 사용자 참여로 구성된 온라인 백과사전</label>
+                </img>
+            </a>
+
+            <a href="https://ko.wikipedia.org/wiki/위키백과:대문">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1loTaZVYmNIrhJcuqR3LvpW2IS2RLU41F"
+                    style="width:55px; height:55px;">
+                <label class="card-title">위키백과</label>
+                <label class="card-detail">전세계 사용자 참여로 구성된 온라인 백과사전</label>
+                </img>
+            </a>
+
+            <a href="https://www.dbpia.co.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1U-Jjbce0qzD63HDO0xPfN1mLmskhHx7z"
+                    style="width:70px; height:90px;">
+                <label class="card-title">DBpia</label>
+                <label class="card-detail">국내 학술지 논문 검색 및 열람이 가능한 학술 데이터베이스</label>
+                </img>
+            </a>
+
+            <a href="https://www.bigkinds.or.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/12-mq3GlouRJxrmu4QR9Yojb43b3b5saV"
+                    style="width:55px; height:55px;">
+                <label class="card-title">빅카인즈</label>
+                <label class="card-detail">뉴스 데이터를 기반으로 정보 분석과 수집이 가능한 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://kostat.go.kr/ansk/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1qKK_4ZnnjFzPGQofEyFrzdnIIOohrLWL"
+                    style="width:70px; height:40px;">
+                <label class="card-title">통계청</label>
+                <label class="card-detail">국가 통계자료를 제공하는 포털</label>
+                </img>
+            </a>
+
+            <a href="https://lib.sejong.go.kr/portal/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1JxyekpJcd-CY6GWACnmhlRVN70PZ_X4l"
+                    style="width:55px; height:40px;">
+                <label class="card-title">세종도서관</label>
+                <label class="card-detail">전자책과 학습자료를 제공하는 디지털 도서관</label>
+                </img>
+            </a>
+
+            <a
+                href="https://read365.edunet.net/PureScreen/SchoolSearch?schoolName=새롬고등학교&provCode=I10&neisCode=I100000162">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1kW4Cz-zf6XPTwR281rluDGou6ik9apv_"
+                    style="width:55px; height:40px;">
+                <label class="card-title">독서로</label>
+                <label class="card-detail">학교 도서관의 책을 검색할 수 있는 시스템</label>
+                </img>
+            </a>
+
+            <a href="https://www.moleg.go.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1bGEO39Q9ZKsGlbP5-IHkRMg1iYs1F_Gr"
+                    style="width:70px; height:40px;">
+                <label class="card-title">법제처</label>
+                <label class="card-detail">법령·행정규칙·자치법규를 검색하고 해석 정보를 제공하는 사이트</label>
+                </img>
+            </a>
         </div>
 
         <div id="ai_tools">
-            <a href="https://chatgpt.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1TjodjBxrUWipJnCtxe35afU38ehQmiI8"><label>ChatGPT</label><label
-                    class="detail">OpenAi의 생성 AI</label></img></a>
-            <a href="https://www.perplexity.ai"><img
-                    src="https://lh3.googleusercontent.com/d/1nnfQLyfQB7b6SMM7HqrP0ifjzGqeJXOl"><label>Perplexity</label><label
-                    class="detail">콘텐츠 제작에 활용할 수 있는 다양한 생성형 AI</label></img></a>
-            <a href="https://gemini.google.com/app?hl=ko"><img
-                    src="https://lh3.googleusercontent.com/d/1-mVDITf09YIWBQe8I75QQTb-Q_9ctjVp"><label>Gemini</label><label
-                    class="detail">구글의 생성형 AI</label></img></a>
-            <a href="https://gamma.app/"><img
-                    src="https://lh3.googleusercontent.com/d/1vJWHiOphaulKBWg5T25Tfn95tyouyErQ"><label>Gamma</label><label
-                    class="detail">발표 자료,ppt를 자동으로 생성해주는 AI</label></img></a>
-            <a href="https://www.napkin.ai/"><img
-                    src="https://lh3.googleusercontent.com/d/1k5d_XeJD0SUWfM2xSuqj908uBcqnta65"><label>Napkin</label><label
-                    class="detail">아이디어를 정리하고 시각적으로 정리해주는 AI</label></img></a>
-            <a href="https://suno.com/home"><img
-                    src="https://lh3.googleusercontent.com/d/11ClzmawSsaAf5uDcQMLncSGc-aiNS0rB"><label>Suno</label><label
-                    class="detail">텍스트로 음악을 생성해주는 AI</label></img></a>
-            <a href="https://claude.ai/new"><img
-                    src="https://lh3.googleusercontent.com/d/1xukEYB8mYrhZw9WpHljIWhYKDrq5fBKe"><label>Claude</label><label
-                    class="detail">문서 분석, 대화 등의 작업을 지원하는 AI</label></img></a>
+
+            <a href="https://chatgpt.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1TjodjBxrUWipJnCtxe35afU38ehQmiI8"
+                    style="width:55px; height:55px;">
+                <label class="card-title">ChatGPT</label>
+                <label class="card-detail">OpenAI의 생성형 AI</label>
+                </img>
+            </a>
+
+            <a href="https://www.perplexity.ai">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1nnfQLyfQB7b6SMM7HqrP0ifjzGqeJXOl"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Perplexity</label>
+                <label class="card-detail">콘텐츠 제작에 활용할 수 있는 다양한 생성형 AI</label>
+                </img>
+            </a>
+
+            <a href="https://gemini.google.com/app?hl=ko">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1-mVDITf09YIWBQe8I75QQTb-Q_9ctjVp"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Gemini</label>
+                <label class="card-detail">구글의 생성형 AI</label>
+                </img>
+            </a>
+
+            <a href="https://gamma.app/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1vJWHiOphaulKBWg5T25Tfn95tyouyErQ"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Gamma</label>
+                <label class="card-detail">발표 자료(PPT)를 자동으로 생성해주는 AI</label>
+                </img>
+            </a>
+
+            <a href="https://www.napkin.ai/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1k5d_XeJD0SUWfM2xSuqj908uBcqnta65"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Napkin</label>
+                <label class="card-detail">아이디어를 정리하고 시각적으로 정리해주는 AI</label>
+                </img>
+            </a>
+
+            <a href="https://suno.com/home">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/11ClzmawSsaAf5uDcQMLncSGc-aiNS0rB"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Suno</label>
+                <label class="card-detail">텍스트로 음악을 생성해주는 AI</label>
+                </img>
+            </a>
+
+            <a href="https://claude.ai/new">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1xukEYB8mYrhZw9WpHljIWhYKDrq5fBKe"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Claude</label>
+                <label class="card-detail">문서 분석, 대화 등의 작업을 지원하는 AI</label>
+                </img>
+            </a>
         </div>
 
         <div id="educate_tools">
-            <a href="https://www.ebsi.co.kr/ebs/pot/poti/main.ebs"><img
-                    src="https://lh3.googleusercontent.com/d/1xT4iCE9MxDYEW9RXSTcmKGIZatlvDnXT"><label>EBSi</label><label
-                    class="detail">교육과정 기반의 학습 콘텐츠를 제공하는 학습 지원 플랫폼</label></img></a>
-            <a href="https://www.kmooc.kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1-5fJ37wuXTZI_YH2ZdhlLiSKa2GgZSs2"
-                    style="height:15px;"><label>KMOOC</label><label class="detail">대학 수준의 강의 수강 플랫폼</label></img></a>
-            <a href="https://ko.khanacademy.org/"><img
-                    src="https://lh3.googleusercontent.com/d/1-dLcihMwCqWdU43QrpTNtRFD3Q2ByfH-"><label>Khan
-                    Academy</label><label class="detail">수학, 과학등의 과목 무료 강의 제공 플랫폼</label></img></a>
-            <a href="https://www.ted.com/"><img
-                    src="https://lh3.googleusercontent.com/d/16ZI60Esthli6E4wcVThASK4WYF7Zxmdu"><label>TED</label><label
-                    class="detail">다양한 분야의 명사 강연을 시청할 수 있는 영상 플랫폼</label></img></a>
-            <a href="https://www.wolframalpha.com/"><img
-                    src="https://lh3.googleusercontent.com/d/1sKleuIHfBBjeBALGJxJcgGaSqA6q8y81"><label>WolframAlpha</label><label
-                    class="detail">수학, 과학 등 계산 중심 지식 탐색 도구</label></img></a>
-            <a href="https://saerom-hs.goorm.io"><img
-                    src="https://lh3.googleusercontent.com/d/1yvQRM1TMbFUnmSIDC_YEz3zG-jpKkVlN"><label>goorm</label><label
-                    class="detail">클라우드 기반의 프로그래밍 학습을 제공하는 플랫폼</label></img></a>
-            <a href="https://student.focuspang.com/ko/login"><img
-                    src="https://lh3.googleusercontent.com/d/1X1sqIWZEjRbwXinzxTT0nLuYhhTMx5NZ"
-                    style="width:70px; height:70px;"><label>포커스팡</label><label class="detail">학습 보조 도구로 학습 시간을 관리할 수 있는
-                    플랫폼</label></img></a>
+
+            <a href="https://www.ebsi.co.kr/ebs/pot/poti/main.ebs">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1xT4iCE9MxDYEW9RXSTcmKGIZatlvDnXT"
+                    style="width:55px; height:55px;">
+                <label class="card-title">EBSi</label>
+                <label class="card-detail">교육과정 기반의 학습 콘텐츠를 제공하는 학습 지원 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.kmooc.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1-5fJ37wuXTZI_YH2ZdhlLiSKa2GgZSs2"
+                    style="width:55px; height:15px;">
+                <label class="card-title">KMOOC</label>
+                <label class="card-detail">대학 수준의 강의 수강 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://ko.khanacademy.org/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1-dLcihMwCqWdU43QrpTNtRFD3Q2ByfH-"
+                    style="width:55px; height:55px;">
+                <label class="card-title">Khan Academy</label>
+                <label class="card-detail">수학, 과학 등의 과목 무료 강의 제공 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.ted.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/16ZI60Esthli6E4wcVThASK4WYF7Zxmdu"
+                    style="width:55px; height:55px;">
+                <label class="card-title">TED</label>
+                <label class="card-detail">다양한 분야의 명사 강연을 시청할 수 있는 영상 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.wolframalpha.com/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1sKleuIHfBBjeBALGJxJcgGaSqA6q8y81"
+                    style="width:55px; height:55px;">
+                <label class="card-title">WolframAlpha</label>
+                <label class="card-detail">수학, 과학 등 계산 중심 지식 탐색 도구</label>
+                </img>
+            </a>
+
+            <a href="https://saerom-hs.goorm.io">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1yvQRM1TMbFUnmSIDC_YEz3zG-jpKkVlN"
+                    style="width:55px; height:55px;">
+                <label class="card-title">goorm</label>
+                <label class="card-detail">클라우드 기반의 프로그래밍 학습을 제공하는 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://student.focuspang.com/ko/login">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1X1sqIWZEjRbwXinzxTT0nLuYhhTMx5NZ"
+                    style="width:70px; height:70px;">
+                <label class="card-title">포커스팡</label>
+                <label class="card-detail">학습 보조 도구로 학습 시간을 관리할 수 있는 플랫폼</label>
+                </img>
+            </a>
         </div>
 
         <div id="career_tools">
-            <a href="https://www.career.go.kr/cloud/w/main/home"><img
-                    src="https://lh3.googleusercontent.com/d/1SKAOO3SwjIvhvjZUJPoZDPdKzCtrOTMx"
-                    style="height:20px;"><label>커리어넷</label><label class="detail">직업 정보와 진로 설계 자료를 제공하는 진로 탐색
-                    플랫폼</label></img></a>
-            <a href="https://www.adiga.kr/man/inf/mainView.do?menuId=PCMANINF1000"><img
-                    src="https://lh3.googleusercontent.com/d/13pVxj0Jq8ur_L6YayVb-tvrIamAt0WlH"
-                    style="width:80px; height:40px;"><label>어디가</label><label class="detail">대학 입시 정보를 종합적으로 제공하는 공신력 있는
-                    서비스</label></img></a>
-            <a href="https://www.majormap.net/"><img
-                    src="https://lh3.googleusercontent.com/d/1Q5MIMwqhUJYGzD5_zjmKfiUTAbSaShNg"
-                    style="width:70px; height:30px;"><label>MAJOR MAP</label><label class="detail">진로에 따라 어울리는 학과나 직업을
-                    추천하는 도구</label></img></a>
-            <a href="https://www.academyinfo.go.kr/index.do"><img
-                    src="https://lh3.googleusercontent.com/d/1-rthHHaQRYwxGTKOjN_sPwnLywxsMFQQ"
-                    style="width:80px; height:80px;"><label>대학알리미</label><label class="detail">각 대학의 전형, 등록금, 졸업률 등 정보를
-                    제공하는 공공 플랫폼</label></img></a>
-            <a href="https://www.work24.go.kr/cm/main.do"><img
-                    src="https://lh3.googleusercontent.com/d/1pqAjKxSxRO2t56sTOSyAnRVnQkD-Stii"
-                    style=" width:80px; height:25px;"><label>고용24</label><label class="detail">구직 정보와 직업 정보를 제공하는 고용노동부
-                    취업 포털</label></img></a>
+
+            <a href="https://www.career.go.kr/cloud/w/main/home">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1SKAOO3SwjIvhvjZUJPoZDPdKzCtrOTMx"
+                    style="width:55px; height:20px;">
+                <label class="card-title">커리어넷</label>
+                <label class="card-detail">직업 정보와 진로 설계 자료를 제공하는 진로 탐색 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.adiga.kr/man/inf/mainView.do?menuId=PCMANINF1000">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/13pVxj0Jq8ur_L6YayVb-tvrIamAt0WlH"
+                    style="width:80px; height:40px;">
+                <label class="card-title">어디가</label>
+                <label class="card-detail">대학 입시 정보를 종합적으로 제공하는 공신력 있는 서비스</label>
+                </img>
+            </a>
+
+            <a href="https://www.majormap.net/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1Q5MIMwqhUJYGzD5_zjmKfiUTAbSaShNg"
+                    style="width:70px; height:30px;">
+                <label class="card-title">MAJOR MAP</label>
+                <label class="card-detail">진로에 따라 어울리는 학과나 직업을 추천하는 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.academyinfo.go.kr/index.do">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1-rthHHaQRYwxGTKOjN_sPwnLywxsMFQQ"
+                    style="width:80px; height:80px;">
+                <label class="card-title">대학알리미</label>
+                <label class="card-detail">각 대학의 전형, 등록금, 졸업률 등 정보를 제공하는 공공 플랫폼</label>
+                </img>
+            </a>
+
+            <a href="https://www.work24.go.kr/cm/main.do">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1pqAjKxSxRO2t56sTOSyAnRVnQkD-Stii"
+                    style="width:80px; height:25px;">
+                <label class="card-title">고용24</label>
+                <label class="card-detail">구직 정보와 직업 정보를 제공하는 고용노동부 취업 포털</label>
+                </img>
+            </a>
         </div>
 
         <div id="communication_tools">
-            <a href="https://v4.schoolbell-e.com/ko/gate/home"><img
-                    src="https://lh3.googleusercontent.com/d/1wRuxPBuZMRSlzObUBtLO-WEunaSwt4cY"><label>학교종이</label><label
-                    class="detail">학부모에게 공지사항이나 가정통신문을 전송하는 플랫폼</label></img></a>
-            <a href="https://neisplus.kr/"><img
-                    src="https://lh3.googleusercontent.com/d/1rOlbdxIRZfHSX_r67Lz0zkTKJV1hh8sX"><label>나이스플러스</label><label
-                    class="detail">학생 생활기록, 성적 등 교육 정보를 종합 관리하는 시스템</label></img></a>
-            <a href="https://www.togetherschool.go.kr/"><img src="
-                https://lh3.googleusercontent.com/d/10Rv20r06qGkvkQYx2-q2UJPqtq-wW26n"><label>함께학교</label><label class="
-                detail">학생, 학부모, 교사 간의 소통을 지원하는 커뮤니티</label></img></a>
-            <a href="https://saerom.sjeduhs.kr/saerom-h/main.do?sso=ok"><img
-                    src="https://lh3.googleusercontent.com/d/1MZ1gSJmAcMjV-A7iQ9cnJTn0CK_qnG7b"><label>새롬고
-                    홈페이지</label><label class="detail">학교 공지사항, 행사 일정 등 공식 정보 제공 사이트</label></img></a>
-            <a href="https://sites.google.com/saerom.hs.kr/depression-test/"><img
-                    src="https://lh3.googleusercontent.com/d/1oDQvpA9n7mk3Q5MBART2ponyS_cuCe5W"
-                    style="width:80px; height:80px;">
-                <label>마음진단</label>
-                <lable class="detail">고1~고3 학생들이 간단한 질문으로 지금 마음 상태를 살펴보고, 필요하면 바로 상담 예약까지 할 수 있는 웹
-                    </label></img>
+
+            <a href="https://v4.schoolbell-e.com/ko/gate/home">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1wRuxPBuZMRSlzObUBtLO-WEunaSwt4cY"
+                    style="width:55px; height:55px;">
+                <label class="card-title">학교종이</label>
+                <label class="card-detail">학부모에게 공지사항이나 가정통신문을 전송하는 플랫폼</label>
+                </img>
             </a>
-            <a href="http://comci.net:4082/st"><img
-                    src="https://lh3.googleusercontent.com/d/1BtpKaZOvHb0bBLodeJ8D8y62SGS9ly6h"><label>컴시간</label><label
-                    class="detail">학교 시간표 제작 및 관리 도구</label></img></a>
-            <a href="https://www.hancomtaja.com/ko"><img
-                    src="https://lh3.googleusercontent.com/d/14pXBgjl52To3goDmhYRosX3l5xp8gUxv"
-                    style="width:80px; height:80px;"><label>한컴타자</label><label class="detail">타자 실력을 향상시킬 수 있는 온라인 타자 연습
-                    프로그램</label></img></a>
+
+            <a href="https://neisplus.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1rOlbdxIRZfHSX_r67Lz0zkTKJV1hh8sX"
+                    style="width:55px; height:55px;">
+                <label class="card-title">나이스플러스</label>
+                <label class="card-detail">학생 생활기록, 성적 등 교육 정보를 종합 관리하는 시스템</label>
+                </img>
+            </a>
+
+            <a href="https://www.togetherschool.go.kr/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/10Rv20r06qGkvkQYx2-q2UJPqtq-wW26n"
+                    style="width:55px; height:55px;">
+                <label class="card-title">함께학교</label>
+                <label class="card-detail">학생, 학부모, 교사 간의 소통을 지원하는 커뮤니티</label>
+                </img>
+            </a>
+
+            <a href="https://saerom.sjeduhs.kr/saerom-h/main.do?sso=ok">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1MZ1gSJmAcMjV-A7iQ9cnJTn0CK_qnG7b"
+                    style="width:55px; height:55px;">
+                <label class="card-title">새롬고 홈페이지</label>
+                <label class="card-detail">학교 공지사항, 행사 일정 등 공식 정보 제공 사이트</label>
+                </img>
+            </a>
+
+            <a href="https://sites.google.com/saerom.hs.kr/depression-test/">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1oDQvpA9n7mk3Q5MBART2ponyS_cuCe5W"
+                    style="width:55px; height:55px;">
+                <label class="card-title">마음진단</label>
+                <label class="card-detail">고1~고3 학생들이 간단한 질문으로 현재 마음 상태를 점검하고 필요 시 상담 예약까지 가능한 웹</label>
+                </img>
+            </a>
+
+            <a href="http://comci.net:4082/st">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/1BtpKaZOvHb0bBLodeJ8D8y62SGS9ly6h"
+                    style="width:55px; height:55px;">
+                <label class="card-title">컴시간</label>
+                <label class="card-detail">학교 시간표 제작 및 관리 도구</label>
+                </img>
+            </a>
+
+            <a href="https://www.hancomtaja.com/ko">
+                <img class="card-icon" src="https://lh3.googleusercontent.com/d/14pXBgjl52To3goDmhYRosX3l5xp8gUxv"
+                    style="width:80px; height:80px;">
+                <label class="card-title">한컴타자</label>
+                <label class="card-detail">타자 실력을 향상시킬 수 있는 온라인 타자 연습 프로그램</label>
+                </img>
+            </a>
         </div>
 
         <br>
@@ -1015,7 +1319,7 @@
 
     <div id="blur-overlay"></div>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material&#43;Icons" rel="stylesheet">
 
     <script>
         const sheetURL = "https://script.google.com/macros/s/AKfycbxHE6AOAiDnvZDu5rj-nKDwononCGr-jBSzynl-hV4Ql1gjAvKKP-GOg16JKeEt-cPdnw/exec";
@@ -1132,241 +1436,162 @@
                 console.error("❌ 광고 데이터 로딩 실패:", err);
             });
 
-        const suggestions = [
-            "구글", "google", "클래스룸", "classroom", "드라이브", "drive", "지메일", "gmail",
-            "챗", "chat", "맵", "maps", "캘린더", "calendar", "슬라이드", "slides", "킵", "keep",
-            "시트", "sheets", "독스", "문서", "docs", "사이트", "sites", "폼", "forms", "코랩", "colab",
-            "학술 검색", "scholar", "번역기", "translate", "캔바", "canva", "미리캔버스", "miricanvas",
-            "한컴독스", "hancom docs", "클립챔프", "clipchamp", "프로그래마이즈", "programize",
-            "폴라리스 오피스", "polaris office", "북크리에이터", "book creator", "틴커캐드", "tinkercad",
-            "피그마", "figma", "네이버", "naver", "네이버 어학사전", "naver dictionary", "나무위키", "namuwiki",
-            "위키백과", "wikipedia", "디비피아", "dbpia", "빅카인즈", "bigkinds", "통계청", "kostat",
-            "세종도서관", "독서로", "챗지피티", "chatgpt", "퍼플렉시티", "perplexity", "제미나이", "gemini",
-            "감마", "gamma", "냅킨", "napkin", "수노", "suno", "클로드", "claude", "이비에스아이", "ebsi",
-            "kmooc", "칸 아카데미", "khan academy", "테드", "ted", "울프람알파", "wolframalpha",
-            "구름", "goorm", "커리어넷", "careernet", "어디가", "adiga", "majormap", "메이저맵",
-            "대학알리미", "고용24", "work24", "학교종이", "나이스플러스", "neisplus", "함께학교",
-            "새롬고 홈페이지", "한컴타자", "hancom taja", "컴시간", "마음진단", "포커스팡", "focuspang", "법제처"
-        ];
-
         let currentFocus = -1;
 
         function getInitialConsonants(word) {
-            const initial = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
-            return Array.from(word).map(ch => {
-                const code = ch.charCodeAt(0) - 44032;
-                return code >= 0 && code <= 11171
-                    ? initial[Math.floor(code / 588)]
-                    : ch;
-            }).join('');
+
+            const initial = [
+                'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ',
+                'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ',
+                'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ',
+                'ㅌ', 'ㅍ', 'ㅎ'
+            ];
+
+            let result = '';
+
+            for (let i = 0; i < word.length; i++) {
+
+                const ch = word.charCodeAt(i) - 44032;
+
+                if (ch >= 0 && ch <= 11171) {
+                    result += initial[Math.floor(ch / 588)];
+                } else {
+                    result += word[i];
+                }
+            }
+
+            return result;
         }
 
         function showSuggestions() {
-            const input = document.getElementById('inputField').value;
-            const val = input.toLowerCase();
-            const list = document.getElementById('suggestionList');
-            list.innerHTML = '';
+
+            const inputEl = document.getElementById("inputField");
+            const list = document.getElementById("suggestionList");
+
+            if (!inputEl || !list) return;
+
+            const input = inputEl.value.trim();
+            list.innerHTML = "";
             currentFocus = -1;
-            if (!val) { list.style.display = 'none'; return; }
 
+            if (input === "") {
+                list.style.display = "none";
+                return;
+            }
+
+            const val = input.toLowerCase();
             const isInitialSearch = /^[ㄱ-ㅎ]+$/.test(input);
-            const init = isInitialSearch ? val : getInitialConsonants(val);
 
-            const matches = suggestions.filter(sugg => {
-                const low = sugg.toLowerCase();
+
+            const titleElements = document.querySelectorAll(".card-title");
+
+            let matchCount = 0;
+
+            for (let i = 0; i < titleElements.length; i++) {
+
+                const titleEl = titleElements[i];
+                const parentLink = titleEl.closest("a");
+
+                if (!parentLink) continue;
+
+                const text = titleEl.textContent.trim().toLowerCase();
+                const textInitial = getInitialConsonants(text);
+
+                let isMatch = false;
+
                 if (isInitialSearch) {
-                    return getInitialConsonants(low).includes(init);
+                    isMatch = textInitial.indexOf(val) !== -1;
                 } else {
-                    return low.includes(val);
+                    isMatch = text.indexOf(val) !== -1;
                 }
-            });
 
-            if (matches.length) {
-                matches.forEach(text => {
-                    const li = document.createElement('li');
-                    li.textContent = text;
-                    li.onclick = () => {
-                        document.getElementById('inputField').value = text;
-                        list.style.display = 'none';
-                        printLink();
-                    };
+                if (isMatch) {
+
+                    const li = document.createElement("li");
+                    li.className = "suggestion-item";
+
+                    const cloned = parentLink.cloneNode(true);
+
+                    li.appendChild(cloned);
+
+                    li.addEventListener("click", function () {
+                        window.open(parentLink.href, "_blank");
+                        list.style.display = "none";
+                    });
+
                     list.appendChild(li);
-                });
-                list.style.display = 'block';
-            } else {
-                list.innerHTML = '<p>검색 결과가 없습니다.</p>';
-                list.style.display = 'block';
+                    matchCount++;
+                }
+            }
+
+            if (matchCount === 0) {
+                const li = document.createElement("li");
+                li.textContent = "검색 결과가 없습니다.";
+                list.appendChild(li);
+            }
+
+            list.style.display = "block";
+        }
+
+        function checkEnterKey(e) {
+
+            const list = document.getElementById("suggestionList");
+            if (!list) return;
+
+            const items = list.getElementsByTagName("li");
+
+            if (e.key === "ArrowDown") {
+                currentFocus++;
+                addActive(items);
+                e.preventDefault();
+            }
+
+            else if (e.key === "ArrowUp") {
+                currentFocus--;
+                addActive(items);
+                e.preventDefault();
+            }
+
+            else if (e.key === "Enter") {
+
+                e.preventDefault();
+
+                if (currentFocus > -1 && items[currentFocus]) {
+                    items[currentFocus].click();
+                }
             }
         }
 
         function addActive(items) {
-            if (!items) return;
+
+            if (!items || items.length === 0) return;
+
             removeActive(items);
+
             if (currentFocus >= items.length) currentFocus = 0;
             if (currentFocus < 0) currentFocus = items.length - 1;
-            items[currentFocus].classList.add('active');
-            items[currentFocus].scrollIntoView({ block: 'nearest' });
+
+            items[currentFocus].classList.add("active");
         }
+
         function removeActive(items) {
-            Array.from(items).forEach(i => i.classList.remove('active'));
-        }
 
-        function checkEnterKey(e) {
-            const list = document.getElementById('suggestionList');
-            const items = list.getElementsByTagName('li');
-            if (e.key === 'ArrowDown') {
-                currentFocus++;
-                addActive(items);
-                e.preventDefault();
-            } else if (e.key === 'ArrowUp') {
-                currentFocus--;
-                addActive(items);
-                e.preventDefault();
-            } else if (e.key === 'Enter') {
-                e.preventDefault();
-                if (currentFocus > -1 && items[currentFocus]) {
-                    items[currentFocus].click();
-                } else {
-                    printLink();
-                }
-                list.style.display = 'none';
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.remove("active");
             }
         }
 
-        function printLink() {
-            const input = document.getElementById('inputField').value.trim();
-            const links = {
-                "구글": "https://www.google.com/",
-                "google": "https://www.google.com/",
-                "클래스룸": "https://classroom.google.com/",
-                "classroom": "https://classroom.google.com/",
-                "드라이브": "https://drive.google.com/",
-                "drive": "https://drive.google.com/",
-                "지메일": "https://mail.google.com/",
-                "gmail": "https://mail.google.com/",
-                "챗": "https://mail.google.com/chat/",
-                "chat": "https://mail.google.com/chat/",
-                "맵": "https://www.google.com/maps",
-                "maps": "https://www.google.com/maps",
-                "캘린더": "https://calendar.google.com/",
-                "calendar": "https://calendar.google.com/",
-                "슬라이드": "https://docs.google.com/presentation/",
-                "slides": "https://docs.google.com/presentation/",
-                "킵": "https://keep.google.com/",
-                "keep": "https://keep.google.com/",
-                "시트": "https://docs.google.com/spreadsheets/",
-                "sheets": "https://docs.google.com/spreadsheets/",
-                "독스": "https://docs.google.com/document/",
-                "문서": "https://docs.google.com/document/",
-                "docs": "https://docs.google.com/document/",
-                "사이트": "https://sites.google.com/",
-                "sites": "https://sites.google.com/",
-                "폼": "https://docs.google.com/forms/",
-                "forms": "https://docs.google.com/forms/",
-                "코랩": "https://colab.research.google.com/",
-                "colab": "https://colab.research.google.com/",
-                "학술 검색": "https://scholar.google.co.kr/schhp",
-                "scholar": "https://scholar.google.co.kr/schhp",
-                "번역기": "https://translate.google.com/",
-                "translate": "https://translate.google.com/",
-                "캔바": "https://www.canva.com/ko_kr/",
-                "canva": "https://www.canva.com/ko_kr/",
-                "미리캔버스": "https://www.miricanvas.com/",
-                "miricanvas": "https://www.miricanvas.com/",
-                "한컴독스": "https://www.hancomdocs.com/ko/home",
-                "hancom docs": "https://www.hancomdocs.com/ko/home",
-                "클립챔프": "https://app.clipchamp.com/login",
-                "clipchamp": "https://app.clipchamp.com/login",
-                "프로그래마이즈":
-                    "https://www.programiz.com/python-programming/online-compiler/",
-                "programize":
-                    "https://www.programiz.com/python-programming/online-compiler/",
-                "폴라리스 오피스": "https://www.polarisoffice.com/ko/personal/officeweb",
-                "polaris office":
-                    "https://www.polarisoffice.com/ko/personal/officeweb",
-                "북크리에이터": "https://bookcreator.com/", "book creator":
-                    "https://bookcreator.com/",
-                "틴커캐드":
-                    "https://www.tinkercad.com/", "tinkercad": "https://www.tinkercad.com/",
-                "피그마": "https://www.figma.com/ko-kr/", "figma": "https://www.figma.com/ko-kr/",
-                "네이버": "https://www.naver.com/", "naver": "https://www.naver.com/",
-                "naver": "https://www.naver.com/",
-                "네이버 어학사전": "https://dict.naver.com/",
-                "naver dictionary": "https://dict.naver.com/",
-                "나무위키": "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
-                "namuwiki": "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
-                "위키백과": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-                "wikipedia": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-                "디비피아": "https://www.dbpia.co.kr/",
-                "dbpia": "https://www.dbpia.co.kr/",
-                "빅카인즈": "https://www.bigkinds.or.kr/",
-                "bigkinds": "https://www.bigkinds.or.kr/",
-                "통계청": "https://kostat.go.kr/ansk/",
-                "kostat": "https://kostat.go.kr/ansk/",
-                "세종도서관": "https://lib.sejong.go.kr/portal/",
-                "독서로": "https://read365.edunet.net/PureScreen/SchoolSearch?schoolName=%EC%83%88%EB%A1%AC%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90&provCode=I10&neisCode=I100000162",
-                "챗지피티": "https://chatgpt.com/",
-                "chatgpt": "https://chatgpt.com/",
-                "퍼플렉시티": "https://www.perplexity.ai/",
-                "perplexity": "https://www.perplexity.ai/",
-                "제미나이": "https://gemini.google.com/app?hl=ko",
-                "gemini": "https://gemini.google.com/app?hl=ko",
-                "감마": "https://gamma.app/",
-                "gamma": "https://gamma.app/",
-                "냅킨": "https://www.napkin.ai/",
-                "napkin": "https://www.napkin.ai/",
-                "수노": "https://suno.com/home",
-                "suno": "https://suno.com/home",
-                "클로드": "https://claude.ai/new",
-                "claude": "https://claude.ai/new",
-                "이비에스아이": "https://www.ebsi.co.kr/ebs/pot/poti/main.ebs",
-                "ebsi": "https://www.ebsi.co.kr/ebs/pot/poti/main.ebs",
-                "kmooc": "https://www.kmooc.kr/",
-                "칸 아카데미": "https://ko.khanacademy.org/",
-                "khan academy": "https://ko.khanacademy.org/",
-                "테드": "https://www.ted.com/",
-                "ted": "https://www.ted.com/",
-                "울프람알파": "https://www.wolframalpha.com/",
-                "wolframalpha": "https://www.wolframalpha.com/",
-                "구름": "https://saerom-hs.goorm.io/",
-                "goorm": "https://saerom-hs.goorm.io/",
-                "커리어넷": "https://www.career.go.kr/cloud/w/main/home",
-                "careernet": "https://www.career.go.kr/cloud/w/main/home",
-                "어디가": "https://www.adiga.kr/man/inf/mainView.do?menuId=PCMANINF1000",
-                "adiga": "https://www.adiga.kr/man/inf/mainView.do?menuId=PCMANINF1000",
-                "majormap": "https://www.majormap.net/",
-                "메이저맵": "https://www.majormap.net/",
-                "대학알리미": "https://www.academyinfo.go.kr/index.do",
-                "고용24": "https://www.work24.go.kr/cm/main.do",
-                "work24": "https://www.work24.go.kr/cm/main.do",
-                "학교종이": "https://v4.schoolbell-e.com/ko/gate/home",
-                "나이스플러스": "https://neisplus.kr/",
-                "neisplus": "https://neisplus.kr/",
-                "함께학교": "https://www.togetherschool.go.kr/",
-                "새롬고 홈페이지": "https://saerom.sjeduhs.kr/saerom-h/main.do?sso=ok",
-                "한컴타자": "https://www.hancomtaja.com/ko",
-                "hancom taja": "https://www.hancomtaja.com/ko",
-                "컴시간": "http://comci.net:4082/st",
-                "마음진단": "https://sites.google.com/saerom.hs.kr/depression-test/%EB%A7%88%EC%9D%8C-%EC%A7%84%EB%8B%A8",
-                "포커스팡": "https://student.focuspang.com/ko/login",
-                "focuspang": "https://student.focuspang.com/ko/login",
-                "법제처": "https://www.moleg.go.kr/"
-            };
+        document.addEventListener("click", function (e) {
 
-            if (links[input]) {
-                window.open(links[input], '_blank');
-            } else {
-                alert('검색 결과가 없습니다.');
-            }
-        }
+            const container = document.getElementById("suggestionContainer");
+            const list = document.getElementById("suggestionList");
 
-        const searchInput = document.querySelector("#suggestionContainer input");
-        window.addEventListener("keydown", (e) => {
-            if (document.querySelector("#suggestions iframe").style.display === "block") {
-                return;
+            if (!container || !list) return;
+
+            if (!container.contains(e.target)) {
+                list.style.display = "none";
             }
-            searchInput.focus();
-        })
+        });
 
         const buttonsDiv = document.getElementById("buttons");
         const moreBtn = document.getElementById("more_button");
