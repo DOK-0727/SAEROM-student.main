@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학교 튜토리얼 센터</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #222;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        body.dark-mode header {
+            border-bottom: 1px solid #444;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🎓";
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: black;
+        }
+
+        body.dark-mode .menu-toggle {
+            color: white;
+        }
+
+        .dark-toggle {
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .btn-box {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #nav {
+            width: 264px;
+            border-right: 1px solid #e0e0e0;
+            padding: 1rem 1.5rem 1rem 2.4rem;
+            background-color: #f3f3f3;
+            transition: transform 0.3s ease;
+            position: relative;
+            height: 100%;
+        }
+
+        #nav ul {
+            list-style: none;
+            overflow-y: scroll;
+            height: 85%;
+            min-width: 140px;
+        }
+
+        #nav li {
+            margin-bottom: 0.54rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.6rem 0.8em;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            user-select: none;
+        }
+
+        #nav li:hover {
+            background-color: #e8f0fe;
+            color: #1967d2;
+        }
+
+        #nav li.active {
+            font-weight: 600;
+            color: #1967d2;
+            background-color: #e8f0fe;
+        }
+
+        body.dark-mode #nav li.active {
+            font-weight: 600;
+            color: #90caf9;
+            background-color: #333;
+        }
+
+        body.dark-mode nav li:hover {
+            background-color: #2c2c2c;
+            color: #90caf9;
+        }
+
+        body.dark-mode nav li.active {
+            background-color: #333;
+            color: #90caf9;
+        }
+
+        body.dark-mode #nav {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        body.dark-mode .content div {
+            color: #ccc;
+        }
+
+        section.content {
+            flex: 1;
+            padding: 3rem 3rem 2rem 3rem;
+            overflow-y: auto;
+            margin: 0 5% 0 10%;
+            min-width: 650px;
+        }
+
+        .fade-in-title {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .fade-in-content {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content div {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #444;
+            max-width: 78%;
+            /* white-space: pre-wrap; */
+        }
+
+        #btns-wrap {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        body.dark-mode .content p {
+            color: #ccc;
+        }
+
+        #right-nav {
+            width: 12%;
+            min-width: 140px;
+            height: 100%;
+
+            padding: 2rem 3rem;
+            overflow-y: auto;
+        }
+
+        .tutorial-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        img.tutorial-image {
+            display: block;
+            margin: 1rem auto;
+            width: 100%;
+            height: auto;
+            /* 비율 유지 */
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            #nav {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                background-color: #fafafa;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+                opacity: 0;
+                pointer-events: none;
+                padding: 1rem 1.5rem 1rem 2.4rem;
+            }
+
+            #nav.open {
+                max-height: 90vh;
+                overflow-y: auto;
+                opacity: 1;
+                pointer-events: auto;
+                border-bottom: 1px solid #ccc;
+            }
+
+            section.content {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .content h1 {
+                font-size: 1.4rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+                line-height: 1.8;
+                max-width: 100%;
+            }
+
+            #right-nav {
+                display: none;
+            }
+        }
+
+        #footer {
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">SAEROM</div>
+        <div id="btns-wrap">
+            <div class="btn-box">
+                <button class="dark-toggle" id="dark-toggle">🌙</button>
+            </div>
+            <div class="btn-box">
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav id="nav">
+            <ul id="menu">
+                <li class="active" data-key="classroom">클래스룸</li>
+                <li data-key="gmail">Gmail</li>
+                <li data-key="chat">구글 챗</li>
+                <li data-key="docs">구글 문서</li>
+                <li data-key="forms">구글 설문지</li>
+                <li data-key="canva">캔바</li>
+                <li data-key="dbpia">DBpia</li>
+                <li data-key="bigkinds">BIGKINDS</li>
+                <li data-key="wolfram">울프람 알파</li>
+                <li data-key="odiga">어디가</li>
+                <li data-key="niceplus">나이스 플러스</li>
+                <li></li>
+            </ul>
+            <div id="footer">
+                <p>
+                    made by 테크웍스<br />
+                    이태인, 이율, 허동하, 박상준, 이유정, 김관수
+                </p>
+            </div>
+        </nav>
+        <section class="content" id="content-area">
+            <h1 class="fade-in-title">클래스룸</h1>
+            <div class="fade-in-content"></div>
+            <!-- <img src="img/classroom-1.png" /> -->
+        </section>
+        <nav id="right-nav"></nav>
+    </main>
+    <footer data-key="나너무많은일이잇엇어" style="display: none">
+        <div data-key="힘들다진짜">
+            <p>테크웍스 화이팅</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav");
+        const darkToggle = document.getElementById("dark-toggle");
+        const contentArea = document.getElementById("content-area");
+        const menuItems = document.querySelectorAll("#menu li");
+
+        function setDarkModeToggle() {
+            document.body.classList.toggle("dark-mode");
+            if (localStorage.getItem("isDarkMode") === "true") {
+                localStorage.setItem("isDarkMode", false);
+            } else {
+                localStorage.setItem("isDarkMode", true);
+            }
+            darkToggle.textContent = document.body.classList.contains("dark-mode")
+                ? "☀️"
+                : "🌙";
+        }
+
+        // 다크모드 토글
+        darkToggle.addEventListener("click", () => {
+            setDarkModeToggle();
+        });
+
+        // 모바일 메뉴 토글
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+        });
+        // 이미지 : \\isrc=[img/classroom-1.png], 줄바꿈 : \n
+
+        // 메뉴 클릭 시 문서 내용 업데이트 + 애니메이션
+        const docs = {
+            classroom: {
+                title: "클래스룸",
+                body: "Google Classroom은 교사가 수업 자료를 배포하고 학생의 과제 제출을 관리할 수 있도록 지원하는 온라인 학습 플랫폼입니다.\\n\\isrc=[https://lh3.googleusercontent.com/d/1Kdjz9KxKpNoao_OrHlGdbmv65pTq3DiK] 사용자는 classroom.google.com에 접속하여 계정으로 로그인하면, 자신이 참여 중인 수업 목록을 홈 화면에서 확인할 수 있습니다.\\n\\isrc=[https://lh3.googleusercontent.com/d/1s4k9j0aByBXbw7h2qYeV39R3A1JNbpUM]\\n각 수업에는 스트림, 수업, 사람, 성적 탭이 있으며, 주로 과제와 자료는 '수업' 탭에 게시됩니다.\\n 과제 항목에는 제목, 설명, 마감일이 표시되며, Google Drive 파일 첨부 또는 직접 작성한 문서를 통해 제출이 가능합니다.\\n\\isrc=[https://lh3.googleusercontent.com/d/12aj4SIag829D5wywbuQj5YY6dwuVHX0c]\\n왼쪽 메뉴의 '캘린더'에서는 모든 수업의 과제 마감일이 달력 형태로 정리되어 있으며, '미완료 과제' 메뉴를 통해 현재 상태(할당됨/누락됨/완료됨)를 확인할 수 있습니다.\\n",
+            },
+            gmail: {
+                title: "Gmail",
+                body: "Gmail은 Google 계정 기반의 이메일 서비스입니다. 크롬북에서는 Gmail 앱이나 mail.google.com을 통해 사용 가능합니다.\\isrc=[https://lh3.googleusercontent.com/d/1N6jcd3Lkz9hdKoBqgOF8zcTEFyqY8E2_]이메일 작성 시 '편지쓰기' 버튼을 클릭하고, 수신자 이메일, 제목, 본문을 입력합니다. 첨부파일은 클립 아이콘을 클릭해 업로드하며, 링크 삽입도 가능합니다. 보낸 메일은 '보낸편지함'에서 확인할 수 있습니다.",
+            },
+            chat: {
+                title: "구글 챗",
+                body: "Google Chat은 gmail을 기반으로 실시간 채팅과 협업을 지원하는 도구입니다. \\n gmail에 접속하여 좌측 mail 아래 Chat을 통해 접속할 수 있습니다.\\n \\isrc=[https://lh3.googleusercontent.com/d/1pjXBOFvR9XcNrJnQYZQdo5rxpSy9XOru] \\n 새롬고등학교에선 각 반마다 스페이스(단체 톡방)이 있으며, 이는 모든 학생이 자동 참여됩니다.\\n\\n \\isrc=[https://lh3.googleusercontent.com/d/1zBkmOcwN83eHqi7lIUPR6op3lSp4LxwK] \\n 이외에도 스페이스를 생성, 참가할 수 있으며 \\n\\isrc=[https://lh3.googleusercontent.com/d/16PxxsQAu5JhJT-4bPiQgLZ9GYLJhEfRJ] \\n 스페이스의 다른 유저와 개인 메세지로 대화할 수도 있습니다.",
+            },
+            docs: {
+                title: "구글 문서",
+                body: "Google Docs는 실시간 공동 편집이 가능한 워드 프로세서입니다. \\n문서 생성 후 상단 '공유' 버튼을 통해 공동 작업자를 추가할 수 있습니다.\\n \\isrc=[https://lh3.googleusercontent.com/d/1p74z7-XT107NCBliUA_sKEr15KWf_kY0] \\n'도구' 메뉴의 '단어 수'(Ctrl+Shift+C)는 문서의 글자 수, 단어 수 등을 확인하는 데 사용되며, '삽입' 메뉴에서는 특수문자, 수식, 표 등을 추가할 수 있습니다. \\n Google Sheets와 연동해 데이터를 시각화할 수도 있습니다.",
+            },
+            forms: {
+                title: "구글 설문지",
+                body: "Google Forms는 설문조사, 퀴즈 등을 쉽게 만들 수 있는 도구입니다. 사용자는 질문 유형(객관식, 주관식 등)을 선택하고, 각 항목을 필수로 설정하거나 이미지 및 설명을 추가할 수 있습니다.\\isrc=[https://lh3.googleusercontent.com/d/1LewjJh73yFZqdj-2m3nJFrVSAALqfJni]설문 응답은 Google Sheets와 자동 연동되어 통계적으로 분석하기 용이합니다.",
+            },
+            canva: {
+                title: "캔바",
+                body: "Canva는 다양한 디자인 템플릿을 제공하는 온라인 그래픽 도구입니다. 사용자는 포스터, 카드, 프레젠테이션 등을 만들 수 있습니다. \\isrc=[https://lh3.googleusercontent.com/d/1lCnVsHGGy4g3eS5hm5gWXjPLpdGv46k9] 홈 화면에서 디자인 형식을 선택하고, 템플릿, 텍스트, 요소, 이미지 업로드 등 다양한 도구를 활용해 작업합니다. 디자인은 편집 중, 댓글 달기, 보기 모드로 전환할 수 있으며, 공동 작업자를 추가해 실시간 협업도 가능합니다.",
+            },
+            dbpia: {
+                title: "DBpia",
+                body: "DBpia는 학술 논문을 검색하고 열람할 수 있는 학술 데이터베이스입니다. \\n학교 공용 계정\\n\\n ID: saerom \\n PW: saerom2022!\\n\\n을 통해 로그인한 뒤, 기관 인증을 완료하면 대부분의 논문을 열람할 수 있습니다.",
+            },
+            bigkinds: {
+                title: "빅카인즈",
+                body: "\\n\\isrc=[https://lh3.googleusercontent.com/d/1xNTqCNdery4XvRlX4PW3MYsJbR1OYIGf] \\n BigKinds는 뉴스 데이터를 기반으로 정보 분석이 가능한 플랫폼입니다. \\n 뉴스 검색 시 언론사나 주제별로 필터를 설정할 수 있으며, 형태소 분석이나 개체명 분석 결과를 시각화된 그래프로 확인할 수 있습니다.➡️ 필터 설정 화면과 분석 결과 시각화 예시를 함께 삽입하면 학습 이해를 돕습니다.",
+            },
+            wolfram: {
+                title: "울프람 알파",
+                body: "\\n\\isrc=[https://lh3.googleusercontent.com/d/1qSe2TG3165HBy7jek8FpbkkVJWvlx2ru]\\nWolfram Alpha는 수식 계산과 과학 지식 검색에 특화된 지식 엔진입니다. \\n 사용자는 수학식 입력을 통해 다양한 풀이 과정을 시각적으로 확인할 수 있으며, 함수 그래프, 통계 분석 등 고급 기능도 지원됩니다.",
+            },
+            odiga: {
+                title: "어디가",
+                body: "\\n\\isrc=[https://lh3.googleusercontent.com/d/1YnNKXoGP_0DTU2uiFgVlwVt9rVyZUw0v] \\n '어디가'는 대학, 학과, 전형 정보 등을 종합적으로 제공하는 진로 탐색 플랫폼입니다. \\n 사용자는 관심 있는 직업 또는 대학을 검색해 세부 정보를 확인할 수 있습니다.",
+            },
+            niceplus: {
+                title: "나이스 플러스",
+                body: "\\n\\isrc=[https://lh3.googleusercontent.com/d/1UAu7NByydPGIC-SH9G6tP1t0ZsXPCNSO] \\n 나이스플러스는 학교생활 정보를 통합 제공하는 교육 행정 시스템입니다. 학사일정, 식단표, 성적, 생활기록부 조회가 가능하며, 크롬북 또는 웹을 통해 접속할 수 있습니다.",
+            },
+        };
+
+        const classroomProcessedBody = docs.classroom.body
+            .replace(
+                /\\isrc=\[([^\]]+)\]/g,
+                '<br><img src="$1" class="tutorial-image" /><br>'
+            )
+            .replace(/\\n/g, "<br>");
+
+        document.querySelector("#content-area > div").innerHTML =
+            classroomProcessedBody;
+
+        menuItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const key = item.getAttribute("data-key");
+                const doc = docs[key] || {
+                    title: key,
+                    body: `${key} 튜토리얼이 준비 중입니다.`,
+                };
+
+                // active 표시
+                menuItems.forEach((i) => i.classList.remove("active"));
+                item.classList.add("active");
+                // 콘텐츠 변경 + 애니메이션 적용
+                const processedBody = doc.body
+                    .replace(
+                        /\\isrc=\[([^\]]+)\]/g,
+                        '<img src="$1" class="tutorial-image" />'
+                    )
+                    .replace(/\\n/g, "<br>");
+
+                contentArea.innerHTML = `
+              <h1 class="fade-in-title">${doc.title}</h1>
+              <div class="fade-in-content">${processedBody}</div>
+            `;
+            });
+        });
+        if (localStorage.getItem("isDarkMode") === null) {
+            localStorage.setItem("isDarkMode", false);
+        } else {
+            if (localStorage.getItem("isDarkMode") === "true") {
+                document.body.classList.add("dark-mode");
+            } else {
+                document.body.classList.remove("dark-mode");
+            }
+        }
+    </script>
+</body>
+
+</html>
