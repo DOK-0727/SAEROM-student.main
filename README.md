@@ -92,3 +92,14 @@
     <br>
     <img src="explain_img/My_Tool/Google_Apps_Script.jpeg" height="12px;">Google Apps Script
 </P>
+
+<h3>튜토리얼/h3>
+<img src="explain_img/Element/tutorial.png">
+<p>이 요소는 학생들이 크롬북 사용의 기본적인 정보를 학습할 수 있도록 튜토리얼을 제공합니다.</p>
+<p>
+    <img src="explain_img/My_Tech/HTML.jpeg" height="12px;">HTML
+    <img src="explain_img/My_Tech/CSS.jpeg" height="12px;">CSS
+    <img src="explain_img/My_Tech/JavaScript.jpeg" height="12px;">JavaScript
+    <br>
+    <img src="explain_img/My_Tool/Google_Sites" height="12px;">Google Sites
+</P>
