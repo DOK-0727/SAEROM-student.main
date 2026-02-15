@@ -101,5 +101,5 @@
     <img src="explain_img/My_Tech/CSS.jpeg" height="12px;">CSS
     <img src="explain_img/My_Tech/JavaScript.jpeg" height="12px;">JavaScript
     <br>
-    <img src="explain_img/My_Tool/Google_Sites" height="12px;">Google Sites
+    <img src="explain_img/My_Tool/Google_Sites.jpeg" height="12px;">Google Sites
 </P>
